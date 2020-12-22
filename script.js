@@ -1,7 +1,7 @@
-document.getElementById("submit").addEventListener("click", function(event){
-    event.preventDefault()
-  });
-function submitHandler(){
+document.getElementById("form").addEventListener("submit", function(event){
+    
+    event.preventDefault();
+// function submitHandler(event){
     var url = document.getElementById("input_url").value;
     const expression = "^((http|https):\/\/|(http|https):\/\/?(www\.)|[wW]{3}\.|)digikala\.com\/product?(\/.*)?$"
     const regex = new RegExp(expression);
@@ -28,7 +28,7 @@ function submitHandler(){
         alert("Type a correct url");
     }
     
-}
+});
 function modeHadler(){
     var element = document.body;
     element.classList.toggle("dark-mode");
