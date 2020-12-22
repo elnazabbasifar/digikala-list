@@ -1,3 +1,6 @@
+document.getElementById("submit").addEventListener("click", function(event){
+    event.preventDefault()
+  });
 function submitHandler(){
     var url = document.getElementById("input_url").value;
     const expression = "^((http|https):\/\/|(http|https):\/\/?(www\.)|[wW]{3}\.|)digikala\.com\/product?(\/.*)?$"
@@ -26,5 +29,8 @@ function submitHandler(){
     }
     
 }
-
+function modeHadler(){
+    var element = document.body;
+    element.classList.toggle("dark-mode");
+}
 
