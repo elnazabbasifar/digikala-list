@@ -8,7 +8,7 @@ document.getElementById("form").addEventListener("submit", function(event){
     const regex = new RegExp(expression);
     
     if (regex.test(url)) {     
-        addLinktoList(String(url));
+        addLinktoList(url);
     }else{
         alert("Type a correct url");
     }
@@ -21,7 +21,7 @@ function addLinktoList(url) {
     // Get the title.                
     var str = getLastItem(url).replaceAll('-', ' '); ;
     var result = str.link(url).replace('a href=', 'a target="_blank" href='); 
-
+    // Check the new url in the list.
     isinList = checkListforUrl(result);
     if (!isinList) {
         // Create list element.
