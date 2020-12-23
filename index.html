@@ -3,22 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
 </head>
-<body style = "text-align:center;">
+<body>
+<!-- <body style = "text-align:center;"> -->
 
     <form id="form">
         <div>
-            <button id="btnMode" onclick="modeHadler()">Toggle dark mode</button>
+            <button id="btnMode" onclick="modeHandler()">Toggle dark mode</button>
         </div>
-            Type an address: <input type="url" id="input_url" size="40" name="input_url" 
-            placeholder="example: www.digikala.com/product/..." />
         <div>
+            Search: <input type="url" id="input_url" size="40" name="input_url" 
+            placeholder="example: www.digikala.com/product/..." />
+        
            <input type="submit" value="Submit" id="submit" />
            <input type="reset" value="Reset form"/>
         </div>
         <ul id="list"></ul>
     </form>
 </body>
-
+<script src="script.js"></script>
 </html>

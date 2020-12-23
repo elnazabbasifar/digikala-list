@@ -2,7 +2,7 @@ body {
     padding: 25px;
     background-color: white;
     color: black;
-    font-size: 25px;
+    font-size: 18px;
 }
   
 .dark-mode {
@@ -14,4 +14,13 @@ body {
     position:absolute; 
     top:0; 
     right:0;
+}
+#list li a {
+    color:#535353;  
+    display:block;
+    font-size: 14px;
+    font-weight:bold;
+    /* line-height:2.8; */
+    text-decoration:none;
+    width:50%;
 }

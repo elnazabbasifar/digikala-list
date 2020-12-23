@@ -1,35 +1,46 @@
+var url = document.getElementById("input_url").value;
+const getLastItem = thePath => thePath.substring(thePath.lastIndexOf('/') + 1)
+// console.log(typeof(url));
 document.getElementById("form").addEventListener("submit", function(event){
     
     event.preventDefault();
-// function submitHandler(event){
-    var url = document.getElementById("input_url").value;
     const expression = "^((http|https):\/\/|(http|https):\/\/?(www\.)|[wW]{3}\.|)digikala\.com\/product?(\/.*)?$"
     const regex = new RegExp(expression);
     
-    if (url.match(regex)) {     
-        
-        // Create anchor element. 
-        var a = document.createElement("a");                  
-        // Create the text node for anchor element. 
-        var link = document.createTextNode("This is link");        
-        // Append the text node to anchor element. 
-        a.appendChild(link);       
-        // Set the title. 
-        a.title = "This is Link";         
-        // Set the href property. 
-        a.href = String(url);         
-        // Create list element
-        var li = document.createElement("li"); 
-        // Append the anchor element to the list. 
-        li.innerHTML = a;
-        document.getElementsById("list").appendChild(li);
-        
+    if (regex.test(url)) {     
+        addLinktoList(String(url));
     }else{
         alert("Type a correct url");
     }
     
 });
-function modeHadler(){
+function addLinktoList(url) {
+    
+    // Remove whitespace from both sides of url.
+    url = url.trim();
+    // Get the title.                
+    var str = getLastItem(url).replaceAll('-', ' '); ;
+    var result = str.link(url).replace('a href=', 'a target="_blank" href='); 
+
+    isinList = checkListforUrl(result);
+    if (!isinList) {
+        // Create list element.
+        var li = document.createElement("li"); 
+        // Append the anchor element to the list. 
+        li.innerHTML = result;
+        document.getElementById("list").appendChild(li);
+    }
+    
+}
+function checkListforUrl(a) { 
+    var ul = document.getElementById("list");   
+    var items = ul.getElementsByTagName("li");
+    for (var i = 0; i < items.length; i++){
+        if(items[i].value.href == a.href) return true;
+    }
+    return false;
+} 
+function modeHandler(){
     var element = document.body;
     element.classList.toggle("dark-mode");
 }
