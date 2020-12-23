@@ -1,8 +1,7 @@
-var url = document.getElementById("input_url").value;
 const getLastItem = thePath => thePath.substring(thePath.lastIndexOf('/') + 1)
 // console.log(typeof(url));
 document.getElementById("form").addEventListener("submit", function(event){
-    
+    var url = document.getElementById("input_url").value;
     event.preventDefault();
     const expression = "^((http|https):\/\/|(http|https):\/\/?(www\.)|[wW]{3}\.|)digikala\.com\/product?(\/.*)?$"
     const regex = new RegExp(expression);
@@ -19,7 +18,7 @@ function addLinktoList(url) {
     // Remove whitespace from both sides of url.
     url = url.trim();
     // Get the title.                
-    var str = getLastItem(url).replaceAll('-', ' '); ;
+    var str = getLastItem(decodeURI(url)).replaceAll('-', ' '); ;
     var result = str.link(url).replace('a href=', 'a target="_blank" href='); 
     // Check the new url in the list.
     isinList = checkListforUrl(result);

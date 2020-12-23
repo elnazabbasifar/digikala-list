@@ -6,20 +6,26 @@
 </head>
 <body>
 <!-- <body style = "text-align:center;"> -->
-
+    <div>
+        <button id="btnMode" onclick="modeHandler()">Toggle dark mode</button>
+    </div>
     <form id="form">
-        <div>
-            <button id="btnMode" onclick="modeHandler()">Toggle dark mode</button>
-        </div>
-        <div>
-            Search: <input type="url" id="input_url" size="40" name="input_url" 
-            placeholder="example: www.digikala.com/product/..." />
-        
-           <input type="submit" value="Submit" id="submit" />
-           <input type="reset" value="Reset form"/>
-        </div>
-        <ul id="list"></ul>
+        <fieldset id="formSet">
+            <legend><h2>Digikala Form</h2></legend>
+            <div>
+                Search: <input type="url" id="input_url" size="40" name="input_url" 
+                placeholder="example: www.digikala.com/product/..." />
+            
+            <input type="submit" value="Submit" id="submit" />
+            <input type="reset" value="Reset form"/>
+            </div>
+        </fieldset>
     </form>
+    <div class="urlsBox">
+        <ul id="list"></ul>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
+    <!-- <script src="axios.js"></script> -->
 </body>
-<script src="script.js"></script>
 </html>
