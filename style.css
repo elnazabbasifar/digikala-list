@@ -28,6 +28,9 @@ body {
     text-decoration:none;
     width:50%;
 }
+div.input {
+    height: 60%;
+}
 #input_url{
     width: 60%;
 }
@@ -39,6 +42,7 @@ div.urlsBox {
     border: 1px solid black;
     background-color: rgba(0, 255, 255, 0.5);
 }
+/* mouse over link */
 a:hover {
     opacity: 0.5;
 }
