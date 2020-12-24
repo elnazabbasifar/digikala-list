@@ -39,8 +39,5 @@ function checkListforUrl(a) {
     }
     return false;
 } 
-function modeHandler(){
-    var element = document.body;
-    element.classList.toggle("dark-mode");
-}
+
 
