@@ -1,6 +1,7 @@
 function modeHandler(){
+  
     var element = document.body;
-    element.classList.toggle("dark-mode");
+    document.body.classList.toggle("dark-mode");
 }
 
 //============================================================
@@ -24,12 +25,13 @@ function setTheme(imageUrl){
     brightness = lightOrDark(dominantColor); 
     console.log(brightness); 
     // If the background color is dark, add the light-text class to it
-    if(brightness == 'dark') {
-      document.body.classList.add('dark-mode');
+    if(brightness == 'dark') 
+      modeHandler();
+      // document.body.classList.add('dark-mode');
         // element.classList.add('light-text');
-    }else {
-      document.body.classList.add('light-mode');
-    }
+    // }else {
+    //   document.body.classList.add('light-mode');
+    // }
   });
 }//func
 //============================================================
