@@ -4,11 +4,14 @@ body {
     color: black;
     font-size: 18px;
     background: rgba(255, 255, 255, 0.25);
-}
-  
+} 
 .dark-mode {
     background-color: black;
     color: white;
+}
+.light-mode {
+    background-color: white;
+    color: black;
 }
 #formSet {
     width:1000px;
@@ -20,7 +23,7 @@ body {
     right:0;
 }
 #list li a {
-    color:#000000;  
+    /* color:#000000;   */
     display:block;
     font-size: 12px;
     font-weight:bold;
