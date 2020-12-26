@@ -18,7 +18,8 @@ function addLinktoList(url) {
     // Remove whitespace from both sides of url.
     url = url.trim();
     // Get the title.                
-    var str = getLastItem(decodeURI(url)).replaceAll('-', ' '); ;
+    // and replace all - with whitespace.
+    var str = getLastItem(decodeURI(url)).replace(/-/g, ' ');
     var result = str.link(url).replace('a href=', 'a target="_blank" href='); 
     // Check the new url in the list.
     isinList = checkListforUrl(result);
