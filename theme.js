@@ -5,20 +5,24 @@ function modeHandler(){
 
 //============================================================
 // Auto select dark or light theme based on the dominant color of the background image.
-function setTheme(){
+// Run from axios.js > setBackground()
+function setTheme(imageUrl){
   
   const colorThief = new ColorThief();
-  const img = document.querySelector('img');
+  var img = document.createElement("img");  // const img = document.querySelector('img');
+  // imageUrl = String(document.body.style.backgroundImage.split('"')[1]);
+  img.setAttribute("src", imageUrl);
+  img.setAttribute("alt", "Bing's image of today");
   img.crossOrigin = 'Anonymous';
-
-  img.addEventListener('load', function() {
-
+  console.log(img);
+  
+  // wait for loading image
+  img.addEventListener("load", function() {
     // Grab the dominant color of an image.
     dominantColor = colorThief.getColor(img);
-
     // Call lightOrDark function to get the brightness (light or dark)
-    brightness = lightOrDark(dominantColor);
-        
+    brightness = lightOrDark(dominantColor); 
+    console.log(brightness); 
     // If the background color is dark, add the light-text class to it
     if(brightness == 'dark') {
       document.body.classList.add('dark-mode');
@@ -27,7 +31,6 @@ function setTheme(){
       document.body.classList.add('light-mode');
     }
   });
-
 }//func
 //============================================================
 //calculates the color’s HSP value to determine whether the color is light or dark
@@ -49,4 +52,4 @@ function lightOrDark(rgbColor) {
   else            return 'dark';
 }
 
-setTheme();
+// setTheme();
