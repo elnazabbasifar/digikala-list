@@ -35,8 +35,10 @@ function addLinktoList(url) {
 function checkListforUrl(a) { 
     var ul = document.getElementById("list");   
     var items = ul.getElementsByTagName("li");
+    console.log(items);
     for (var i = 0; i < items.length; i++){
-        if(items[i].value.href == a.href) return true;
+        
+        if(items[i]["innerHTML"] == a) return true;
     }
     return false;
 } 
