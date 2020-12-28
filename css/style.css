@@ -31,11 +31,16 @@ body {
     text-decoration:none;
     width:50%;
 }
-div.input {
+/* div.input {
     height: 60%;
-}
+} */
 #input_url{
+    background-color: white;
+    border-radius: 5px;
+    box-sizing: border-box;
+    height: 30px;
     width: 60%;
+    color: black;
 }
 div.urlsBox {
 
