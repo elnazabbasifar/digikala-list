@@ -1,9 +1,7 @@
 function modeHandler(){
 
     var element = document.body;
-    document.body.classList.toggle("dark-mode");
-    document.getElementById("formSet").classList.toggle("dark-mode");
-    document.getElementById("btnMode").classList.toggle("dark-mode");
+    element.classList.toggle("dark-mode");
 }
 
 //============================================================

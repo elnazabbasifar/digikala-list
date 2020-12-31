@@ -1,7 +1,7 @@
 const getLastItem = thePath => thePath.substring(thePath.lastIndexOf('/') + 1)
 // console.log(typeof(url));
 document.getElementById("form").addEventListener("submit", function(event){
-    var url = document.getElementById("input_url").value;
+    var url = document.getElementById("icon_search").value;
     event.preventDefault();
     const expression = "^((http|https):\/\/|(http|https):\/\/?(www\.)|[wW]{3}\.|)digikala\.com\/product?(\/.*)?$"
     const regex = new RegExp(expression);
@@ -23,6 +23,7 @@ function addLinktoList(url) {
     var result = str.link(url).replace('a href=', 'a target="_blank" href='); 
     // Check the new url in the list.
     isinList = checkListforUrl(result);
+    document.getElementById("urlsBox").hidden = false;
     if (!isinList) {
         // Create list element.
         var li = document.createElement("li"); 
@@ -35,7 +36,6 @@ function addLinktoList(url) {
 function checkListforUrl(a) { 
     var ul = document.getElementById("list");   
     var items = ul.getElementsByTagName("li");
-    console.log(items);
     for (var i = 0; i < items.length; i++){
         
         if(items[i]["innerHTML"] == a) return true;
